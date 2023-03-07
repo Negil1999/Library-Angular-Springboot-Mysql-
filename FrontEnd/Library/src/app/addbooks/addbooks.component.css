@@ -1,0 +1,117 @@
+
+* {
+box-sizing: border-box;
+}
+
+@media only screen and (max-width: 620px) {
+/* For mobile phones: */
+.right {
+  width: 87%;
+
+}
+/* .form-control{
+  top:15%;
+}
+*/
+.csvv{
+  position: relative;
+  left: 8%;
+  top:65px;
+} 
+
+.centered{
+  top: 18%;
+  left:45%;
+}
+.mat-dialog-container{
+margin-left: 20%;
+}
+
+.form-control{
+width: 10%;
+}
+
+.mycls{
+  left: 35%;
+  margin-left: 20%;
+}
+
+.csvv{
+  /* position: relative; */
+  left: -55%;
+  /* top:65px; */
+} 
+
+
+}
+
+
+
+/* ----- */
+
+
+  .split {
+    height: 100%;
+    /* width: 50%; */
+    position: fixed;
+    /* z-index: 1; */
+    top: 5%;
+    overflow-x: hidden;
+    padding-top: 5%;
+    padding-bottom: 10%;
+  }
+  
+  .left {
+    left: 0;
+    width: 18%;
+     z-index: 1;
+    background-color: #111;
+  }
+  
+  .right {
+    right: 0;
+    width: 80%;
+    background-color: rgb(255, 255, 255);
+  }
+  
+  .centered {
+    position: absolute;
+    top: 16%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+.form-control{
+  width: 40vh;
+  
+}
+  .csvv{
+    position: relative;
+    left: 95%;
+    top:5%;
+  } 
+
+  table{
+    width: 90%;
+    scroll-behavior: auto;
+    border: none;
+    text-align: left;
+    height: 100px;
+    text-size-adjust: auto;
+    
+    
+  }
+  th {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    text-align: left;
+    border: none;
+  }
+  td {
+    border: none;
+    padding-top: 6px;padding-bottom: 6px;
+    text-align: left;
+  } 
+
+      
+

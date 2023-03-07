@@ -1,0 +1,68 @@
+<router-outlet></router-outlet>
+<app-sidenav></app-sidenav>
+
+
+
+
+
+
+
+
+  <div class="right">
+    <form position:relative;>
+       
+                   <div class="table-responsive"><br>
+                      <h2 style="text-align:center ;">OUTSTANDING FINE  DETAILS</h2>
+
+
+                          <table align="center" class="table table-white table-hover" id="datatable" role="grid" style="position:relative;" >
+                           
+                            <thead class="bg-primary text-white">
+                                <tr role="row">
+                                 
+                                  <th>User Name</th>
+                                  <th>Book Name</th>
+                                  <th>Issue Date</th>                                                            
+                                  <th>Due Date</th>                                    
+                                  <th>DueDays</th>                                  
+                                  <th>Fine(INR)</th>
+                                
+                        
+                                  </tr>
+                            </thead>
+                            <tbody>
+      <tr *ngFor="let borrow of  borrowdata
+      | paginate 
+      : {
+          itemsPerPage: tableSize,
+          currentPage: page,
+          totalItems: count
+        };        
+      ">
+
+          <td>{{borrow.user.firstName}}</td>
+          <td>{{borrow.books.booksName}}</td>
+          <td>{{borrow.issueDate| date:'dd/MM/yyyy'}}</td>                 
+          <td>{{borrow.dueDate| date:'dd/MM/yyyy'}}</td>
+          <td>{{borrow.dueDays}}</td>
+          <td>{{borrow.fine}}</td>             
+          
+      </tr>
+  
+      <label *ngIf="this.data==1">   NO RECORDS FOUND </label>
+      
+                            </tbody>
+                        </table>
+                        <div class="d-flex justify-content-center" *ngIf="this.data!=1">
+                          <pagination-controls (pageChange)="onTableDataChange(page=$event)">
+                          </pagination-controls>
+                    </div>
+                    </div>
+             
+          
+    </form>
+
+    
+  </div>
+
+

@@ -1,0 +1,27 @@
+
+
+ <form [formGroup]="ObjSampleForm" class="dialog-form"> 
+ <div mat-dialog-content style="text-align: center;">
+  <p *ngIf="categoryId==null"><b>ADD CATEGORY</b></p>
+  <p *ngIf="categoryId!=null"><b>EDIT CATEGORY</b></p>
+
+</div>
+
+  <mat-dialog-content>
+    <mat-form-field  style="width: 100% ; padding-left:'15%'" >
+      <input  formControlName="categoryName" matInput placeholder="categoryName" maxlength="30" minlength="3" />
+      <span class="text-danger" *ngIf=" ObjSampleForm.hasError('minlength','categoryName')"><small>minimum 3 character</small> </span>
+      <span class="text-danger" *ngIf=" ObjSampleForm.hasError('maxlength','categoryName')"><small>maximum 30 character</small> </span>
+      <mat-error style="text-align: center;">This field is mandatory.</mat-error>
+    </mat-form-field>
+
+</mat-dialog-content>
+
+<div mat-dialog-actions >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <button mat-raised-button color="warn" (click)="clear()" >Clear</button> &nbsp;&nbsp;
+  <button mat-raised-button (click)="onSubmit()" color="primary" [disabled]="ObjSampleForm.invalid">Submit</button>
+ 	
+</div>
+
+ </form>
+

@@ -1,0 +1,75 @@
+<app-sidenav></app-sidenav>   
+
+
+ 
+
+
+
+
+  <div class="right">
+
+ 
+                      <div class="table-responsive"><br>
+                        <h2 style="text-align:center ;" class="centr">USER DETAILS</h2>
+
+
+                            <table  class="table table-white table-hover" id="datatable" role="grid" >
+                             
+                              <thead class="bg-primary text-white">
+                                  <tr role="row">
+                                   
+                                    <th (click)="sortfn('userId')">User Id
+                                      <button mat-icon-button *ngIf="this.direction==1"> <i class="material-icons" style="color:rgb(0, 0, 0)" >keyboard_arrow_up</i></button>
+                                      <button mat-icon-button *ngIf="this.direction==-1"> <i class="material-icons" style="color:rgb(0, 0, 0)" >keyboard_arrow_down</i></button>
+                                    </th>
+
+                                    <th (click)="sortfn('firstName')">First Name
+                                      <button mat-icon-button *ngIf="this.direction==1"> <i class="material-icons" style="color:rgb(0, 0, 0)" >keyboard_arrow_up</i></button>
+                                      <button mat-icon-button *ngIf="this.direction==-1"> <i class="material-icons" style="color:rgb(0, 0, 0)" >keyboard_arrow_down</i></button>
+                                    </th>
+                                    <th (click)="sortfn('lastName')">Last Name
+                                      <button mat-icon-button *ngIf="this.direction==1"> <i class="material-icons" style="color:rgb(0, 0, 0)" >keyboard_arrow_up</i></button>
+                                      <button mat-icon-button *ngIf="this.direction==-1"> <i class="material-icons" style="color:rgb(0, 0, 0)" >keyboard_arrow_down</i></button>
+                                    </th>
+                                    <th (click)="sortfn('phone')">Phone
+                                      <button mat-icon-button *ngIf="this.direction==1"> <i class="material-icons" style="color:rgb(0, 0, 0)" >keyboard_arrow_up</i></button>
+                                      <button mat-icon-button *ngIf="this.direction==-1"> <i class="material-icons" style="color:rgb(0, 0, 0)" >keyboard_arrow_down</i></button>
+                                    </th>
+                                    <th (click)="sortfn('email')">Email
+                                      <button mat-icon-button *ngIf="this.direction==1"> <i class="material-icons" style="color:rgb(0, 0, 0)" >keyboard_arrow_up</i></button>
+                                      <button mat-icon-button *ngIf="this.direction==-1"> <i class="material-icons" style="color:rgb(0, 0, 0)" >keyboard_arrow_down</i></button>
+                                    </th>
+                            
+                                    <th></th>
+                                    </tr>
+                              </thead>
+                              <tbody>
+        <tr *ngFor="let user of  userdata
+        | paginate 
+                          : {
+                              itemsPerPage: tableSize,
+                              currentPage: page,
+                              totalItems: count
+                            };        
+        ">
+          <td>{{user.userId}}</td>
+        <td>{{user.firstName}}</td>
+        <td>{{user.lastName}}</td>
+        <td>{{user.phone}}</td>
+        <td>{{user.email}}</td>
+        <td>
+          <button mat-icon-button>
+          <i class="material-icons" style="color:rgb(14, 155, 216)" (click)="DetailView(user)" >visibility</i>  &nbsp;
+        </button>
+      </td>
+ 
+        
+                              </tbody>
+                          </table>
+                          <div class="d-flex justify-content-center">
+                            <pagination-controls (pageChange)="onTableDataChange(page=$event)">
+                            </pagination-controls>
+                      </div>
+                  </div>
+                </div>
+           
